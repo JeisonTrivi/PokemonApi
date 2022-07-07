@@ -1,0 +1,24 @@
+<div class="card mb-3" >
+  <div class="row g-0">
+    <div class="col-md-6">
+        <img *ngIf="imgFront()" src="{{ personaje.sprites.front_default }}" class="img-fluid" alt="{{ personaje.name }}">
+        <img *ngIf="imgFrontFemale()" src="{{ personaje.sprites.front_female }}" class="img-fluid" alt="{{ personaje.name }}">
+        <img *ngIf="imgFrontShiny()" src="{{ personaje.sprites.front_shiny }}" class="img-fluid" alt="{{ personaje.name }}">
+        <img *ngIf="imgFrontShinyFemale()" src="{{ personaje.sprites.front_shiny_female }}" class="img-fluid" alt="{{ personaje.name }}">
+
+    </div>
+    <div class="col-md-6">
+
+        <img *ngIf="imgBack()" src="{{ personaje.sprites.back_default }}" class="img-fluid" alt="{{ personaje.name }}">
+        <img *ngIf="imgBackFemale()" src="{{ personaje.sprites.back_female }}" class="img-fluid" alt="{{ personaje.name }}">
+        <img *ngIf="imgBackShiny()" src="{{ personaje.sprites.back_shiny }}" class="img-fluid" alt="{{ personaje.name }}">
+        <img *ngIf="imgBackShinyFemale()" src="{{ personaje.sprites.front_shiny_female }}" class="img-fluid" alt="{{ personaje.name }}">
+    </div>
+      <div class="card-body">
+        <h5 class="card-title text-center">{{ personaje.name.charAt(0).toUpperCase() + this.personaje.name.slice(1) }}</h5>
+        <p class="card-text text-center">Id : {{ personaje.id }}</p>
+      </div>
+    </div>
+</div>
+
+
