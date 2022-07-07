@@ -7,6 +7,7 @@ import { Personaje } from 'src/app/interfaces/Personaje';
   styleUrls: ['./card.component.css'],
 })
 export class CardComponent {
+  @Input() personajes!: Personaje[];
   @Input() personaje!: Personaje;
 
   constructor() {}

@@ -11,7 +11,8 @@
 
     <div class="container row mx-auto align-self-start">
       <div *ngFor ='let personaje of personajes' class="col-xl-4 col-sm-6 col-xs-12">
-        <app-card [personaje]="personaje"></app-card>
+        <app-card [personaje]="personaje" [personajes]="personajes"></app-card>
+
       </div>
     </div>
 </div>

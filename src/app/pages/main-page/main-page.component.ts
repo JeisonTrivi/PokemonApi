@@ -31,9 +31,6 @@ export class MainPageComponent {
       .get(`${environment.apiUrl}/${this.nameLowerCase}`)
       .subscribe((pokemon: any) => {
         this.personaje = pokemon;
-        this.urlImage = pokemon.sprites.front_default;
-        this.nameCharacter =
-          pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
       });
     this.personajesCopy = this.personajes;
   }

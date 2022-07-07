@@ -9,16 +9,46 @@
     </div>
     <div class="col-md-6">
 
-        <img *ngIf="imgBack()" src="{{ personaje.sprites.back_default }}" class="img-fluid" alt="{{ personaje.name }}">
-        <img *ngIf="imgBackFemale()" src="{{ personaje.sprites.back_female }}" class="img-fluid" alt="{{ personaje.name }}">
-        <img *ngIf="imgBackShiny()" src="{{ personaje.sprites.back_shiny }}" class="img-fluid" alt="{{ personaje.name }}">
-        <img *ngIf="imgBackShinyFemale()" src="{{ personaje.sprites.front_shiny_female }}" class="img-fluid" alt="{{ personaje.name }}">
+      <img *ngIf="imgBack()" src="{{ personaje.sprites.back_default }}" class="img-fluid" alt="{{ personaje.name }}">
+      <img *ngIf="imgBackFemale()" src="{{ personaje.sprites.back_female }}" class="img-fluid" alt="{{ personaje.name }}">
+      <img *ngIf="imgBackShiny()" src="{{ personaje.sprites.back_shiny }}" class="img-fluid" alt="{{ personaje.name }}">
+      <img *ngIf="imgBackShinyFemale()" src="{{ personaje.sprites.front_shiny_female }}" class="img-fluid" alt="{{ personaje.name }}">
     </div>
-      <div class="card-body">
-        <h5 class="card-title text-center">{{ personaje.name.charAt(0).toUpperCase() + this.personaje.name.slice(1) }}</h5>
-        <p class="card-text text-center">Id : {{ personaje.id }}</p>
+    <div class="card-body">
+      <h5 class="card-title text-center">{{ personaje.name.charAt(0).toUpperCase() + this.personaje.name.slice(1) }}</h5>
+      <p class="card-text text-center">- Id : <strong>{{ personaje.id }}</strong> </p>
+      <p class="card-text text-center">- Base Experience : <strong>{{ personaje.base_experience }}</strong> </p>
+      <p class="card-text text-center">- Height: <strong>{{ personaje.height }}</strong> </p>
+      <p class="card-text text-center">- Weight : <strong>{{ personaje.weight}}</strong> </p>
+      <p class="card-text text-center">- Weight : <strong>{{ personaje.weight}}</strong> </p>
+
+    </div>
+        <h5 class="text-center">
+        Habilidades
+        </h5>
+        <table class="card-text text-center table" >
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Oculto</th>
+              <th scope="col">Espacio</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let h of personaje.abilities">
+            <tr>
+              <td>{{h.ability.name}}</td>
+              <td>
+                <span class="btn btn-sm float" [ngClass]="{
+                  'btn-success': !h.is_hidden,
+                  'btn-danger': h.is_hidden
+                }">
+                  {{h.is_hidden ? 'Oculto' : 'Visible'}}</span></td>
+              <td>{{h.slot}}</td>
+            </tr>
+          </tbody>
+        </table>
+
       </div>
-    </div>
 </div>
 
 
